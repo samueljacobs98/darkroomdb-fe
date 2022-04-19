@@ -1,3 +1,7 @@
+@use "../../styles/variables" as *;
+
 .home-container {
   display: flex;
+  gap: $gap;
+  padding: $gap;
 }
