@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12.5rem;
+  height: 15.625rem;
+  padding: 1.25rem;
+  text-align: center;
+  background-color: rgba($colour-primary, 0.2);
+}
