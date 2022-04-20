@@ -27,5 +27,20 @@
         font-size: $fs-primary;
       }
     }
+
+    &-input {
+      color: $colour-primary;
+    }
+
+    &-button {
+      font-size: $fs-secondary;
+      background-color: rgba($colour-tertiary, 0.5);
+      border: none;
+      padding: 0.5rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }

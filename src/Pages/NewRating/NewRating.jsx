@@ -21,12 +21,17 @@ const NewRating = () => {
             </span>
           </label>
           <input
+            className="new-rating-container__form-input"
             type="number"
             id="new-rating"
             name="new-rating"
+            step="0.5"
             min="0"
             max="5"
           />
+          <button type="submit" class="new-rating-container__form-button">
+            Submit
+          </button>
         </form>
       </div>
     </Layout>
