@@ -1,0 +1,27 @@
+@use "../../styles/variables" as *;
+
+.display {
+  width: 100%;
+  max-width: 41rem;
+  padding: 2.5rem;
+  margin: 1rem;
+  background-color: rgba($colour-primary, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info {
+    font-size: $fs-secondary;
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: $fs-primary;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
