@@ -11,7 +11,7 @@ const filmData = [
   {
     id: 2,
     name: "Kodak Portra 400",
-    ratings: [4, 4.5, 5, 4.5, 5, 4.5],
+    ratings: [3, 3.5, 4, 3.5, 5, 2.5],
     info: "CineStill 800T is a 35mm tungsten-balanced colour negative film made from Kodak motion picture film stock. Its 800 ISO emulsion is perfect for difficult low light situations. It is a highly flexible film that can be pushed up to 3200 ISO. This emulsion is ideal for scanning.",
     price: "£7.99",
     format: ["35mm", "120"],
