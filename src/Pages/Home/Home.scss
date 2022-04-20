@@ -2,6 +2,15 @@
 
 .home-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: $gap;
   padding: $gap;
+}
+
+@media screen and (min-width: $bp-tablet) {
+  .home-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }

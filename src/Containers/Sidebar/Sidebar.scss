@@ -3,6 +3,41 @@
 .sidebar {
   width: 100%;
   max-width: 22.5rem;
-  padding: 0 1.25rem;
-  background-color: rgba($colour-primary, 0.2);
+  min-width: 12.5rem;
+
+  &__option {
+    background-color: rgba($colour-primary, 0.2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+
+    &-button {
+      width: 100%;
+      background-color: rgba($colour-primary, 0.4);
+      border: none;
+      text-align: left;
+      padding: 0.25rem 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-dropdown {
+      padding: 0 1.25rem;
+      padding-bottom: 0.75rem;
+      &-label {
+        font-size: 1rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.flip {
+  transform: scale(-1, -1);
 }

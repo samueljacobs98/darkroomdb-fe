@@ -9,4 +9,8 @@
   padding: 1.25rem;
   text-align: center;
   background-color: rgba($colour-primary, 0.2);
+
+  &:hover {
+    cursor: pointer;
+  }
 }
