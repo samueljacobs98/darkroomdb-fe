@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba($colour-primary, 0.2);
+  padding: $gap;
+  padding-bottom: calc($gap * 1.5);
+  text-align: center;
+  position: relative;
+
+  & > label,
+  & > button {
+    font-size: $fs-secondary;
+  }
+
+  & > input,
+  & > textarea,
+  & > select {
+    margin-top: calc($gap / 3);
+    margin-bottom: calc($gap / 2);
+    color: $colour-primary;
+    font-size: $fs-secondary;
+    width: 100%;
+  }
+
+  & > button {
+    background-color: rgba($colour-tertiary, 0.5);
+    border: none;
+    padding: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & > p {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: calc($gap / 2);
+    right: calc($gap / 2);
+  }
+}

@@ -1,0 +1,7 @@
+@use "../../styles/variables" as *;
+
+.new-container {
+  display: flex;
+  justify-content: center;
+  padding: $gap;
+}

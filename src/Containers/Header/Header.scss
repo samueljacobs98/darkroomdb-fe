@@ -1,6 +1,25 @@
+@use "../../styles/variables" as *;
+
 .header {
   min-height: 200px;
   display: flex;
-  justify-content: center;
-  align-items: end;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: $gap;
+  align-items: center;
+  width: 100%;
+
+  &__add {
+    font-size: $fs-secondary;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 $gap;
+  }
 }

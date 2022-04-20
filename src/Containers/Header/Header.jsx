@@ -7,6 +7,9 @@ const Header = () => {
       <Link className="header__logo" to="/">
         <h1>DarkRoomdb</h1>
       </Link>
+      <Link className="header__add" to="/film/new">
+        Add a film stock
+      </Link>
     </div>
   );
 };
