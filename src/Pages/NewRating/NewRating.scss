@@ -1,0 +1,31 @@
+@use "../../styles/variables" as *;
+
+.new-rating-container {
+  padding: $gap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+    background-color: rgba($colour-primary, 0.2);
+    width: 100%;
+    max-width: 20rem;
+    padding: $gap;
+    text-align: center;
+    border: 1px solid rgba($colour-tertiary, 0.5);
+
+    &-label {
+      font-size: $fs-secondary;
+      &-span {
+        font-size: $fs-primary;
+      }
+    }
+  }
+}

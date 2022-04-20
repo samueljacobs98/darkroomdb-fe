@@ -9,9 +9,28 @@
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  border: 1px solid rgba($colour-tertiary, 0.5);
+
   &__header {
     display: flex;
     justify-content: space-between;
+
+    &-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &-link {
+        background: none;
+        border: none;
+        font-size: $fs-secondary;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
   &__info {
     font-size: $fs-secondary;

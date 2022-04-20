@@ -9,6 +9,7 @@
   padding-bottom: calc($gap * 1.5);
   text-align: center;
   position: relative;
+  border: 1px solid rgba($colour-tertiary, 0.5);
 
   & > label,
   & > button {

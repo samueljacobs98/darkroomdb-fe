@@ -21,6 +21,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border: 1px solid rgba($colour-tertiary, 0.5);
 
       &:hover {
         cursor: pointer;

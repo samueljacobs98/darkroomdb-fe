@@ -37,10 +37,3 @@ const Form = () => {
 };
 
 export default Form;
-
-// Name
-// Rating
-// Info
-// Price
-// Available Formats
-// Style -> dropdown
