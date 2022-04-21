@@ -2,7 +2,7 @@ import "./Sidebar.scss";
 import chevron from "../../assets/svgs/chevron.svg";
 import { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
   const [toggles, setToggles] = useState({
     film: false,
     format: false,
@@ -38,7 +38,8 @@ const Sidebar = () => {
               type="checkbox"
               id="black-and-white"
               name="black-and-white"
-              value="bnw"
+              value="black and white"
+              onChange={filmFilter}
             />
             <label
               htmlFor="black-and-white"
@@ -47,19 +48,15 @@ const Sidebar = () => {
               Black and White
             </label>
             <br />
-            <input type="checkbox" id="colour" name="colour" value="colour" />
-            <label htmlFor="colour" className="sidebar__option-dropdown-label">
-              Colour
-            </label>
-            <br />
             <input
               type="checkbox"
-              id="instant"
-              name="instant"
-              value="instant"
+              id="colour"
+              name="colour"
+              value="colour"
+              onChange={filmFilter}
             />
-            <label htmlFor="instant" className="sidebar__option-dropdown-label">
-              Instant
+            <label htmlFor="colour" className="sidebar__option-dropdown-label">
+              Colour
             </label>
             <br />
           </form>
@@ -79,14 +76,37 @@ const Sidebar = () => {
         </button>
         {toggles.format && (
           <form className="sidebar__option-dropdown">
-            <input type="checkbox" id="35mm" name="35mm" value="35mm" />
+            <input
+              type="checkbox"
+              id="35mm"
+              name="35mm"
+              value="35mm"
+              onChange={formatFilter}
+            />
             <label htmlFor="35mm" className="sidebar__option-dropdown-label">
               35mm
             </label>
             <br />
-            <input type="checkbox" id="120" name="120" value="120" />
+            <input
+              type="checkbox"
+              id="120"
+              name="120"
+              value="120"
+              onChange={formatFilter}
+            />
             <label htmlFor="120" className="sidebar__option-dropdown-label">
               120
+            </label>
+            <br />
+            <input
+              type="checkbox"
+              id="instant"
+              name="instant"
+              value="instant"
+              onChange={formatFilter}
+            />
+            <label htmlFor="instant" className="sidebar__option-dropdown-label">
+              Instant
             </label>
             <br />
           </form>
@@ -106,37 +126,59 @@ const Sidebar = () => {
         </button>
         {toggles.iso && (
           <form className="sidebar__option-dropdown">
-            <input type="checkbox" id="100" name="100" value="100" />
+            <input
+              type="checkbox"
+              id="100"
+              name="100"
+              value="100"
+              onChange={isoFilter}
+            />
             <label htmlFor="100" className="sidebar__option-dropdown-label">
               100
             </label>
             <br />
-            <input type="checkbox" id="200" name="200" value="200" />
+            <input
+              type="checkbox"
+              id="200"
+              name="200"
+              value="200"
+              onChange={isoFilter}
+            />
             <label htmlFor="200" className="sidebar__option-dropdown-label">
               200
             </label>
             <br />
-            <input type="checkbox" id="400" name="400" value="400" />
+            <input
+              type="checkbox"
+              id="400"
+              name="400"
+              value="400"
+              onChange={isoFilter}
+            />
             <label htmlFor="400" className="sidebar__option-dropdown-label">
               400
             </label>
             <br />
-            <input type="checkbox" id="800" name="800" value="800" />
+            <input
+              type="checkbox"
+              id="800"
+              name="800"
+              value="800"
+              onChange={isoFilter}
+            />
             <label htmlFor="800" className="sidebar__option-dropdown-label">
               800
             </label>
             <br />
             <input
               type="checkbox"
-              id="otherISO"
-              name="otherISO"
-              value="otherISO"
+              id="1600"
+              name="1600"
+              value="1600"
+              onChange={isoFilter}
             />
-            <label
-              htmlFor="otherISO"
-              className="sidebar__option-dropdown-label"
-            >
-              Other
+            <label htmlFor="1600" className="sidebar__option-dropdown-label">
+              1600
             </label>
             <br />
           </form>
