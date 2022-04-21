@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 
 const NewRating = () => {
-  const [posted, setPosted] = useState(true);
+  const [posted, setPosted] = useState(false);
   const id = Number(useParams().id);
   const data = filmData.find((film) => film.id === id);
 
@@ -24,7 +24,14 @@ const NewRating = () => {
   return (
     <Layout>
       <div className="new-rating-container">
-        {!posted && (
+        {posted ? (
+          <div className="new-rating-container__submitted">
+            <h2>Thanks for submitting!</h2>
+            <Link className="new-rating-container__submitted-link" to="/">
+              Click to Continue
+            </Link>
+          </div>
+        ) : (
           <form
             action=""
             className="new-rating-container__form"
@@ -54,14 +61,6 @@ const NewRating = () => {
               Submit
             </button>
           </form>
-        )}
-        {posted && (
-          <div className="new-rating-container__submitted">
-            <h2>Thanks for submitting!</h2>
-            <Link className="new-rating-container__submitted-link" to="/">
-              Click to Continue
-            </Link>
-          </div>
         )}
       </div>
     </Layout>
