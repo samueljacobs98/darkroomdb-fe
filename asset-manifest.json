@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/darkroomdb-fe/static/css/main.fbc86623.css",
-    "main.js": "/darkroomdb-fe/static/js/main.6b5abf03.js",
+    "main.js": "/darkroomdb-fe/static/js/main.59f1a1cf.js",
     "static/js/787.cd97e568.chunk.js": "/darkroomdb-fe/static/js/787.cd97e568.chunk.js",
-    "static/media/loader.gif": "/darkroomdb-fe/static/media/loader.f3efb78916372b91e407.gif",
+    "static/media/loader.gif": "/darkroomdb-fe/static/media/loader.4bebe3886482741b38a9.gif",
     "index.html": "/darkroomdb-fe/index.html",
     "static/media/empty.svg": "/darkroomdb-fe/static/media/empty.ecba855de86a795c3b93ae01b6f8a3bd.svg",
     "static/media/half.svg": "/darkroomdb-fe/static/media/half.d116909949b6c8f38c580a7de1ca3b49.svg",
     "static/media/full.svg": "/darkroomdb-fe/static/media/full.92165850921eaaf131a0f7a2ef0db153.svg",
     "static/media/chevron.svg": "/darkroomdb-fe/static/media/chevron.84a96400c680610c72a28c97b618a946.svg",
     "main.fbc86623.css.map": "/darkroomdb-fe/static/css/main.fbc86623.css.map",
-    "main.6b5abf03.js.map": "/darkroomdb-fe/static/js/main.6b5abf03.js.map",
+    "main.59f1a1cf.js.map": "/darkroomdb-fe/static/js/main.59f1a1cf.js.map",
     "787.cd97e568.chunk.js.map": "/darkroomdb-fe/static/js/787.cd97e568.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbc86623.css",
-    "static/js/main.6b5abf03.js"
+    "static/js/main.59f1a1cf.js"
   ]
 }
