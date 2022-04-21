@@ -30,7 +30,7 @@ const Display = ({ data }) => {
   };
 
   const pageData = getPageData();
-  console.log(pageData.rating);
+  console.log(pageData);
 
   return (
     <div className="display">
@@ -42,7 +42,7 @@ const Display = ({ data }) => {
               <Stars rating={pageData.rating} />
               <Link
                 className="display__header-rating-link"
-                to={`/film/${pageData.filmId}/rating`}
+                to={`/film/${pageData.id}/rating`}
               >
                 Add a rating
               </Link>
