@@ -3,14 +3,13 @@ import "./Home.scss";
 import Layout from "../../Components/Layout/Layout";
 import CardContainer from "../../Containers/CardContainer/CardContainer";
 import Sidebar from "../../Containers/Sidebar/Sidebar";
+import { getRequest } from "../../assets/utils/fetchUtils";
 
 const Home = () => {
   const [filmData, setFilmData] = useState([]);
 
   const getFilm = async () => {
-    const url = "https://darkroomdb.nw.r.appspot.com/film";
-    const response = await fetch(url);
-    const responseCleaned = await response.json();
+    const responseCleaned = await getRequest("film");
     setFilmData(responseCleaned);
   };
 

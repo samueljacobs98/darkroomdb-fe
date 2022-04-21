@@ -30,7 +30,6 @@ const Display = ({ data }) => {
   };
 
   const pageData = getPageData();
-  console.log(pageData);
 
   return (
     <div className="display">

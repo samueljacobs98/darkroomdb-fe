@@ -1,23 +1,28 @@
 import "./NewRating.scss";
 import Layout from "../../Components/Layout/Layout";
-import filmData from "../../assets/mockdata/filmData";
 import { Link, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getRequest, postRequest } from "../../assets/utils/fetchUtils";
 
 const NewRating = () => {
   const [posted, setPosted] = useState(false);
+  const [film, setFilm] = useState("");
+
   const id = Number(useParams().id);
-  const data = filmData.find((film) => film.id === id);
+
+  const getFilm = async (id) => {
+    const responseCleaned = await getRequest(`film/${id}`);
+    setFilm(responseCleaned);
+  };
+
+  useEffect(() => {
+    getFilm(id);
+  }, [id]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const newRating = event.target.newRating.value;
-    const url = "https://darkroomdb.nw.r.appspot.com/film/" + id;
-    fetch(url, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(newRating),
-    });
+    postRequest(`film/${id}`, newRating);
     setPosted(true);
   };
 
@@ -44,7 +49,7 @@ const NewRating = () => {
               Add a new rating for:
               <br />
               <span className="new-rating-container__form-label-span">
-                {data.name}
+                {film.name}
               </span>
             </label>
             <input

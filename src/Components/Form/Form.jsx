@@ -1,34 +1,32 @@
 import "./Form.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { postRequest } from "../../assets/utils/fetchUtils";
 
 const Form = () => {
   const [posted, setPosted] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const getNewFilm = (entry) => {
     const ratings = [];
-    if (event.target.rating.value)
-      ratings.push({ rating: event.target.rating.value });
+    if (entry.rating.value) ratings.push({ rating: entry.rating.value });
     const formats = [];
-    event.target.formats.value
+    entry.formats.value
       .split(",")
       .forEach((format) => formats.push({ format: format.trim() }));
-    const newFilm = {
-      name: event.target.filmName.value,
+    return {
+      name: entry.filmName.value,
       ratings: ratings,
-      info: event.target.information.value,
-      iso: event.target.iso.value,
+      info: entry.information.value,
+      iso: entry.iso.value,
       formats: formats,
-      style: event.target.style.value,
+      style: entry.style.value,
     };
+  };
 
-    const url = "https://darkroomdb.nw.r.appspot.com/film";
-    fetch(url, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(newFilm),
-    });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const newFilm = getNewFilm(event.target);
+    await postRequest("film", newFilm);
     setPosted(true);
   };
 
