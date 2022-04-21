@@ -1,0 +1,19 @@
+@use "../../styles/variables" as *;
+
+.loader-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($colour-primary, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__loader {
+    width: 4rem;
+    height: 4rem;
+  }
+}

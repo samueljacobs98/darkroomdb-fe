@@ -3,9 +3,11 @@ import Layout from "../../Components/Layout/Layout";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getRequest, postRequest } from "../../assets/utils/fetchUtils";
+import LoaderModal from "../../Components/LoaderModal/LoaderModal";
 
 const NewRating = () => {
   const [posted, setPosted] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
   const [film, setFilm] = useState("");
 
   const id = Number(useParams().id);
@@ -26,8 +28,13 @@ const NewRating = () => {
     setPosted(true);
   };
 
+  useEffect(() => {
+    if (film) setShowLoader(false);
+  }, [film]);
+
   return (
     <Layout>
+      {showLoader && <LoaderModal />}
       <div className="new-rating-container">
         {posted ? (
           <div className="new-rating-container__submitted">

@@ -6,7 +6,7 @@ export const getRequest = async (ext) => {
 };
 
 export const postRequest = async (ext, data) => {
-  const url = "https://darkroomdb.nw.r.appspot.com/film";
+  const url = "https://darkroomdb.nw.r.appspot.com/" + ext;
   fetch(url, {
     method: "POST",
     headers: { "content-type": "application/json" },

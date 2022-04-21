@@ -4,9 +4,11 @@ import Layout from "../../Components/Layout/Layout";
 import CardContainer from "../../Containers/CardContainer/CardContainer";
 import Sidebar from "../../Containers/Sidebar/Sidebar";
 import { getRequest } from "../../assets/utils/fetchUtils";
+import LoaderModal from "../../Components/LoaderModal/LoaderModal";
 
 const Home = () => {
   const [filmData, setFilmData] = useState([]);
+  const [showLoader, setShowLoader] = useState(true);
 
   const getFilm = async () => {
     const responseCleaned = await getRequest("film");
@@ -17,9 +19,14 @@ const Home = () => {
     getFilm();
   }, []);
 
+  useEffect(() => {
+    if (filmData.length) setShowLoader(false);
+  }, [filmData]);
+
   return (
     <Layout>
       <div className="home-container">
+        {showLoader && <LoaderModal />}
         <Sidebar />
         <CardContainer filmData={filmData} />
       </div>
