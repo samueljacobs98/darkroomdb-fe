@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import "./Home.scss";
 import Layout from "../../Components/Layout/Layout";
 import CardContainer from "../../Containers/CardContainer/CardContainer";
 import Sidebar from "../../Containers/Sidebar/Sidebar";
 import { getRequest } from "../../assets/utils/fetchUtils";
+import { checkObjectForTrue } from "../../assets/utils/utils";
 import LoaderModal from "../../Components/LoaderModal/LoaderModal";
 
 const Home = () => {
@@ -29,10 +30,6 @@ const Home = () => {
       1600: false,
     },
   });
-
-  const resetFilters = () => {
-    setFilmData(dataStore.current);
-  };
 
   const filmFilter = (event) => {
     const filterToUpdate = event.target.value;
@@ -61,26 +58,50 @@ const Home = () => {
     setFilmData(responseCleaned);
   };
 
+  const checkForActiveFilters = useCallback(() => {
+    const { film, format, iso } = filters;
+    const filmFilters = checkObjectForTrue(film);
+    const formatFilters = checkObjectForTrue(format);
+    const isoFilters = checkObjectForTrue(iso);
+    if (filmFilters || formatFilters || isoFilters) {
+      return true;
+    }
+    return false;
+  }, [filters]);
+
   const filterByStyle = (filters, data) => {
-    if (!data) return [];
-    const filmTypes = Object.keys(filters).filter((keys) => filters[keys]);
-    return data.filter((film) => filmTypes.includes(film.style));
+    const activeFilmTypes = Object.keys(filters.film).filter(
+      (filter) => filters.film[filter]
+    );
+    const filmToShow = data.filter((film) =>
+      activeFilmTypes.includes(film.style)
+    );
+    return filmToShow;
   };
 
   function filterByFormat(filters, data) {
-    if (!dataStore.current) return [];
-    const formats = Object.keys(filters).filter((keys) => filters[keys]);
+    const formats = Object.keys(filters.format).filter(
+      (keys) => filters.format[keys]
+    );
+
     return data.filter((film) => {
       const filmFormats = film.formats.map((format) => format.format);
       let shouldReturn = false;
-      for (const format in filmFormats) {
-        if (formats.includes(filmFormats[format])) {
+      filmFormats.forEach((filmFormat) => {
+        if (formats.includes(filmFormat)) {
           shouldReturn = true;
         }
-      }
+      });
       return shouldReturn;
     });
   }
+
+  const filterByISO = (filters, data) => {
+    const isoTypes = Object.keys(filters.iso).filter(
+      (keys) => filters.iso[keys]
+    );
+    return data.filter((film) => isoTypes.includes(film.iso.toString()));
+  };
 
   useEffect(() => {
     getFilm();
@@ -90,28 +111,30 @@ const Home = () => {
     if (filmData.length) setShowLoader(false);
   }, [filmData]);
 
-  useEffect(() => {
-    const updateFilm = (updatedFilters) => {
-      let dataWithDuplicates = [];
-      filterByStyle(updatedFilters.film, dataStore.current).forEach((film) =>
-        dataWithDuplicates.push(film)
-      );
-      filterByFormat(filters.format, dataWithDuplicates).forEach((film) =>
-        dataWithDuplicates.push(film)
-      );
-      // filterByISO(filters.iso, dataWithDuplicates).forEach((film) =>
-      //   dataWithDuplicates.push(film)
-      // );
-
-      const dataWithoutDuplicates = [...new Set(dataWithDuplicates)];
-      if (dataStore.current && dataWithoutDuplicates.length === 0) {
-        resetFilters();
+  const updateFilm = useCallback(
+    (updatedFilters) => {
+      if (!checkForActiveFilters()) {
+        dataStore.current ? setFilmData(dataStore.current) : setFilmData([]);
         return;
       }
-      setFilmData(dataWithoutDuplicates);
-    };
+      let currentData = [...dataStore.current];
+      if (checkObjectForTrue(filters.film)) {
+        currentData = [...filterByStyle(filters, currentData)];
+      }
+      if (checkObjectForTrue(filters.format)) {
+        currentData = [...filterByFormat(filters, currentData)];
+      }
+      if (checkObjectForTrue(filters.iso)) {
+        currentData = [...filterByISO(filters, currentData)];
+      }
+      setFilmData(currentData);
+    },
+    [checkForActiveFilters, filters]
+  );
+
+  useEffect(() => {
     updateFilm(filters);
-  }, [filters]);
+  }, [filters, updateFilm]);
 
   return (
     <Layout>
