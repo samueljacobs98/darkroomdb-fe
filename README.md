@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Darkroomdb
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](./src/assets/images/readme.png)
 
-## Available Scripts
+_A screenshot of the live site._
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+The goal of this project was to create a full-stack application. Java / Spring Boot was used in conjuction with MySQL to create an API with a database to store the relevant data that would then be added, removed, or simply viewed, using the front-end that was created using React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Design approach
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The design of the front-end was drafted with a wireframe in Figma (all links can be seen at the bottom of this document). The website used react-router-dom to create a site with several pages. Users are able to see all the different films in the database when the page initially loads, and these films can be filtered by format, style, and ISO, using the filters on the sidebar.
 
-### `npm test`
+HTML Canvas was used to create an interesting background, where a new blurry circle is added to the background on every re-render.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When a film on the homepage is clicked, the user is routed through to a film-specific page where data relating to that film is displayed. On this page, a user can select the button "add a rating" to add a rating to the database via a POST request.
 
-### `npm run build`
+Users can also add a film stock to the database using the button in the website header "add a film". All fields bar "rating" are required.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The front-end is deployed on GitHub, while the backend is deployed on the Google Cloud Platform.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Deployed Site
 
-### `npm run eject`
+https://samueljacobs98.github.io/darkroomdb-fe/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Front-end GitHub Repo
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://github.com/samueljacobs98/darkroomdb-fe
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Back-end GitHub Repo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://github.com/samueljacobs98/darkroomdb
 
-## Learn More
+### API Documentation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+https://github.com/samueljacobs98/darkroomdb/blob/master/README.md
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Figma Design
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://www.figma.com/file/UBlMYiv0T53LXJKyecmdES/DarkRoomdb?node-id=0%3A1
