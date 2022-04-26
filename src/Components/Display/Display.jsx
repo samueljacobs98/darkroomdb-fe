@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Display = ({ data }) => {
   const getRating = () => {
-    if (!data.ratings) return -1;
+    if (!data.ratings || data.ratings.length === 0) return -1;
     const size = data.ratings.length;
     const sum = data.ratings
       .map((rating) => rating.rating)
@@ -36,17 +36,13 @@ const Display = ({ data }) => {
       <header className="display__header">
         <h2>{pageData.name}</h2>
         <div className="display__header-rating">
-          {pageData.rating !== -1 && (
-            <>
-              <Stars rating={pageData.rating} />
-              <Link
-                className="display__header-rating-link"
-                to={`/film/${pageData.id}/rating`}
-              >
-                Add a rating
-              </Link>
-            </>
-          )}
+          {pageData.rating !== -1 && <Stars rating={pageData.rating} />}
+          <Link
+            className="display__header-rating-link"
+            to={`/film/${pageData.id}/rating`}
+          >
+            Add a rating
+          </Link>
         </div>
       </header>
       <p className="display__info">{pageData.info}</p>
