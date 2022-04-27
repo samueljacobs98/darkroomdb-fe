@@ -45,13 +45,11 @@ const Home = () => {
 
   const checkForActiveFilters = useCallback(() => {
     const { film, format, iso } = filters;
-    const filmFilters = checkObjectForTrue(film);
-    const formatFilters = checkObjectForTrue(format);
-    const isoFilters = checkObjectForTrue(iso);
-    if (filmFilters || formatFilters || isoFilters) {
-      return true;
-    }
-    return false;
+    return (
+      checkObjectForTrue(film) ||
+      checkObjectForTrue(format) ||
+      checkObjectForTrue(iso)
+    );
   }, [filters]);
 
   const filterByStyle = (filters, data) => {
