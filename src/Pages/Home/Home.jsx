@@ -6,30 +6,13 @@ import Sidebar from "../../Containers/Sidebar/Sidebar";
 import { getRequest } from "../../assets/utils/fetchUtils";
 import { checkObjectForTrue } from "../../assets/utils/utils";
 import LoaderModal from "../../Components/LoaderModal/LoaderModal";
+import initialFilterState from "../../assets/utils/initialFilterState";
 
 const Home = () => {
   const dataStore = useRef();
   const [filmData, setFilmData] = useState([]);
   const [showLoader, setShowLoader] = useState(true);
-
-  const [filters, setFilters] = useState({
-    film: {
-      "black and white": false,
-      colour: false,
-    },
-    format: {
-      instant: false,
-      "35mm": false,
-      120: false,
-    },
-    iso: {
-      100: false,
-      200: false,
-      400: false,
-      800: false,
-      1600: false,
-    },
-  });
+  const [filters, setFilters] = useState(initialFilterState);
 
   const basicFilter = (event, filter) => {
     const filterToUpdate = event.target.value;
