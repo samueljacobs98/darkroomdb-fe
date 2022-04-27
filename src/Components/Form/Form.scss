@@ -10,6 +10,8 @@
   text-align: center;
   position: relative;
   border: 1px solid rgba($colour-tertiary, 0.5);
+  width: 100%;
+  max-width: 30rem;
 
   & > label,
   & > button {
@@ -21,9 +23,12 @@
   & > select {
     margin-top: calc($gap / 3);
     margin-bottom: calc($gap / 2);
-    color: $colour-primary;
     font-size: $fs-secondary;
     width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: none;
+    border: 2px solid white;
   }
 
   & > button {
