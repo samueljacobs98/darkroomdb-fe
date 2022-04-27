@@ -52,17 +52,7 @@ const Home = () => {
     );
   }, [filters]);
 
-  const filterByStyle = (filters, data) => {
-    const activeFilmTypes = Object.keys(filters.film).filter(
-      (filter) => filters.film[filter]
-    );
-    const filmToShow = data.filter((film) =>
-      activeFilmTypes.includes(film.style)
-    );
-    return filmToShow;
-  };
-
-  function filterByFormat(filters, data) {
+  const filterByFormat = (filters, data) => {
     const formats = Object.keys(filters.format).filter(
       (keys) => filters.format[keys]
     );
@@ -77,13 +67,15 @@ const Home = () => {
       });
       return shouldReturn;
     });
-  }
+  };
 
-  const filterByISO = (filters, data) => {
-    const isoTypes = Object.keys(filters.iso).filter(
-      (keys) => filters.iso[keys]
+  const filterByParam = (filters, data, filterParam, filterObject) => {
+    const activeTypes = Object.keys(filters[filterParam]).filter(
+      (filter) => filters[filterParam][filter]
     );
-    return data.filter((film) => isoTypes.includes(film.iso.toString()));
+    return data.filter((film) =>
+      activeTypes.includes(film[filterObject].toString())
+    );
   };
 
   useEffect(() => {
@@ -102,13 +94,13 @@ const Home = () => {
       }
       let currentData = [...dataStore.current];
       if (checkObjectForTrue(filters.film)) {
-        currentData = [...filterByStyle(filters, currentData)];
+        currentData = [...filterByParam(filters, currentData, "film", "style")];
       }
       if (checkObjectForTrue(filters.format)) {
         currentData = [...filterByFormat(filters, currentData)];
       }
       if (checkObjectForTrue(filters.iso)) {
-        currentData = [...filterByISO(filters, currentData)];
+        currentData = [...filterByParam(filters, currentData, "iso", "iso")];
       }
       setFilmData(currentData);
     },
