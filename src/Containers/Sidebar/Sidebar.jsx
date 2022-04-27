@@ -2,7 +2,7 @@ import "./Sidebar.scss";
 import chevron from "../../assets/svgs/chevron.svg";
 import { useState } from "react";
 
-const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
+const Sidebar = ({ basicFilter }) => {
   const [toggles, setToggles] = useState({
     film: false,
     format: false,
@@ -39,7 +39,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="black-and-white"
               name="black-and-white"
               value="black and white"
-              onChange={filmFilter}
+              onChange={(e) => {
+                basicFilter(e, "film");
+              }}
             />
             <label
               htmlFor="black-and-white"
@@ -53,7 +55,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="colour"
               name="colour"
               value="colour"
-              onChange={filmFilter}
+              onChange={(e) => {
+                basicFilter(e, "film");
+              }}
             />
             <label htmlFor="colour" className="sidebar__option-dropdown-label">
               Colour
@@ -81,7 +85,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="35mm"
               name="35mm"
               value="35mm"
-              onChange={formatFilter}
+              onChange={(e) => {
+                basicFilter(e, "format");
+              }}
             />
             <label htmlFor="35mm" className="sidebar__option-dropdown-label">
               35mm
@@ -92,7 +98,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="120"
               name="120"
               value="120"
-              onChange={formatFilter}
+              onChange={(e) => {
+                basicFilter(e, "format");
+              }}
             />
             <label htmlFor="120" className="sidebar__option-dropdown-label">
               120
@@ -103,7 +111,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="instant"
               name="instant"
               value="instant"
-              onChange={formatFilter}
+              onChange={(e) => {
+                basicFilter(e, "format");
+              }}
             />
             <label htmlFor="instant" className="sidebar__option-dropdown-label">
               Instant
@@ -131,7 +141,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="100"
               name="100"
               value="100"
-              onChange={isoFilter}
+              onChange={(e) => {
+                basicFilter(e, "iso");
+              }}
             />
             <label htmlFor="100" className="sidebar__option-dropdown-label">
               100
@@ -142,7 +154,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="200"
               name="200"
               value="200"
-              onChange={isoFilter}
+              onChange={(e) => {
+                basicFilter(e, "iso");
+              }}
             />
             <label htmlFor="200" className="sidebar__option-dropdown-label">
               200
@@ -153,7 +167,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="400"
               name="400"
               value="400"
-              onChange={isoFilter}
+              onChange={(e) => {
+                basicFilter(e, "iso");
+              }}
             />
             <label htmlFor="400" className="sidebar__option-dropdown-label">
               400
@@ -164,7 +180,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="800"
               name="800"
               value="800"
-              onChange={isoFilter}
+              onChange={(e) => {
+                basicFilter(e, "iso");
+              }}
             />
             <label htmlFor="800" className="sidebar__option-dropdown-label">
               800
@@ -175,7 +193,9 @@ const Sidebar = ({ filmFilter, formatFilter, isoFilter }) => {
               id="1600"
               name="1600"
               value="1600"
-              onChange={isoFilter}
+              onChange={(e) => {
+                basicFilter(e, "iso");
+              }}
             />
             <label htmlFor="1600" className="sidebar__option-dropdown-label">
               1600

@@ -31,25 +31,10 @@ const Home = () => {
     },
   });
 
-  const filmFilter = (event) => {
+  const basicFilter = (event, filter) => {
     const filterToUpdate = event.target.value;
-    const { film } = filters;
-    film[filterToUpdate] = !film[filterToUpdate];
-    setFilters({ film, ...filters });
-  };
-
-  const formatFilter = (event) => {
-    const filterToUpdate = event.target.value;
-    const { format } = filters;
-    format[filterToUpdate] = !format[filterToUpdate];
-    setFilters({ format, ...filters });
-  };
-
-  const isoFilter = (event) => {
-    const filterToUpdate = event.target.value;
-    const { iso } = filters;
-    iso[filterToUpdate] = !iso[filterToUpdate];
-    setFilters({ iso, ...filters });
+    filters[filter][filterToUpdate] = !filters[filter][filterToUpdate];
+    setFilters({ ...filters });
   };
 
   const getFilm = async () => {
@@ -140,11 +125,7 @@ const Home = () => {
     <Layout>
       <div className="home-container">
         {showLoader && <LoaderModal />}
-        <Sidebar
-          filmFilter={filmFilter}
-          formatFilter={formatFilter}
-          isoFilter={isoFilter}
-        />
+        <Sidebar basicFilter={basicFilter} />
         <CardContainer filmData={filmData} />
       </div>
     </Layout>
