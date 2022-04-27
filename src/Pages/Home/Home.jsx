@@ -87,7 +87,7 @@ const Home = () => {
   }, [filmData]);
 
   const updateFilm = useCallback(
-    (updatedFilters) => {
+    (filters) => {
       if (!checkForActiveFilters()) {
         dataStore.current ? setFilmData(dataStore.current) : setFilmData([]);
         return;
@@ -104,7 +104,7 @@ const Home = () => {
       }
       setFilmData(currentData);
     },
-    [checkForActiveFilters, filters]
+    [checkForActiveFilters]
   );
 
   useEffect(() => {
