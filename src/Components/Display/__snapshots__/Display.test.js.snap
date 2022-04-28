@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match component snapshot 1`] = `
+<div>
+  <div
+    class="display"
+  >
+    <header
+      class="display__header"
+    >
+      <h2 />
+      <div
+        class="display__header-rating"
+      >
+        <a
+          class="display__header-rating-link"
+          href="/film/undefined/rating"
+        >
+          Add a rating
+        </a>
+      </div>
+    </header>
+    <p
+      class="display__info"
+    />
+    <footer
+      class="display__footer"
+    >
+      <p />
+      <p />
+    </footer>
+  </div>
+  ;
+</div>
+`;

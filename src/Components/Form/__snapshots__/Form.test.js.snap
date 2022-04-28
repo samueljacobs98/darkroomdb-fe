@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match component snapshot 1`] = `
+<div>
+  <form
+    class="form"
+  >
+    <label
+      for="filmName"
+    >
+      Film Name*
+    </label>
+    <input
+      id="filmName"
+      name="filmName"
+      required=""
+      type="text"
+    />
+    <label
+      for="rating"
+    >
+      Rating
+    </label>
+    <input
+      id="rating"
+      max="5"
+      min="0"
+      name="rating"
+      type="number"
+    />
+    <label
+      for="iso"
+    >
+      ISO*
+    </label>
+    <input
+      id="iso"
+      min="0"
+      name="iso"
+      required=""
+      type="number"
+    />
+    <label
+      for="information"
+    >
+      Information*
+      <br />
+      (max. 250 characters)
+    </label>
+    <textarea
+      id="information"
+      maxlength="250"
+      name="information"
+      required=""
+      rows="4"
+    />
+    <label
+      for="formats"
+    >
+      Available Formats*
+      <br />
+      (separate by commas)
+    </label>
+    <input
+      id="formats"
+      name="formats"
+      required=""
+      type="text"
+    />
+    <label
+      for="style"
+    >
+      Style*
+    </label>
+    <select
+      id="style"
+      name="style"
+      required=""
+      type="text"
+    >
+      <option
+        value="black and white"
+      >
+        Black and white
+      </option>
+      <option
+        value="colour"
+      >
+        Colour
+      </option>
+      <option
+        value="sepia"
+      >
+        Sepia
+      </option>
+    </select>
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+    <p>
+      * required
+    </p>
+  </form>
+</div>
+`;

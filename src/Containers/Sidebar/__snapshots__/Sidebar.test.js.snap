@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match component snapshot 1`] = `
+<div>
+  <div
+    class="sidebar"
+  >
+    <div
+      class="sidebar__option"
+    >
+      <button
+        class="sidebar__option-button button-film"
+      >
+        <span
+          class="button-film"
+        >
+          Film
+        </span>
+        <img
+          alt="dropdown chevron"
+          class="button-film"
+          src="chevron.svg"
+        />
+      </button>
+    </div>
+    <div
+      class="sidebar__option"
+    >
+      <button
+        class="sidebar__option-button button-format"
+      >
+        <span
+          class="button-format"
+        >
+          Film Format
+        </span>
+        <img
+          alt="dropdown chevron"
+          class="button-format"
+          src="chevron.svg"
+        />
+      </button>
+    </div>
+    <div
+      class="sidebar__option"
+    >
+      <button
+        class="sidebar__option-button button-iso"
+      >
+        <span
+          class="button-iso"
+        >
+          ISO
+        </span>
+        <img
+          alt="dropdown chevron"
+          class="button-iso"
+          src="chevron.svg"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;

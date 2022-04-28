@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match component snapshot 1`] = `
+<div>
+  <div
+    class="header"
+  >
+    <a
+      class="header__logo"
+      href="/"
+    >
+      <h1>
+        DarkRoomdb
+      </h1>
+    </a>
+    <a
+      class="header__add"
+      href="/film/new"
+    >
+      Add a film stock
+    </a>
+  </div>
+</div>
+`;

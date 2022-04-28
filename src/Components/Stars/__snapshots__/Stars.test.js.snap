@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match component snapshot 1`] = `
+<div>
+  <div
+    class="stars"
+  >
+    <img
+      alt="full rating star"
+      src="empty.svg"
+    />
+    <img
+      alt="full rating star"
+      src="empty.svg"
+    />
+    <img
+      alt="full rating star"
+      src="empty.svg"
+    />
+    <img
+      alt="full rating star"
+      src="empty.svg"
+    />
+    <img
+      alt="full rating star"
+      src="empty.svg"
+    />
+  </div>
+</div>
+`;

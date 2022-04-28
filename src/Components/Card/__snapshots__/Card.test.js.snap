@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match component snapshot 1`] = `
+<div>
+  <a
+    href="/film/1"
+  >
+    <div
+      class="card"
+    >
+      name
+    </div>
+  </a>
+  ;
+</div>
+`;

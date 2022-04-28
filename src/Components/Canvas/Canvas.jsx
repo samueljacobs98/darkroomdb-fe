@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { getNumberInRange } from "../../assets/utils/utils";
-import Circle from "../../assets/utils/circleMakerUtil";
+import { Circle } from "../../assets/utils/circleMakerUtil";
 import "./Canvas.scss";
 
 const Canvas = () => {

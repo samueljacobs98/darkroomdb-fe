@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match component snapshot 1`] = `
+<div>
+  <div
+    class="card-container"
+  >
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak ColourPlus 200
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak Portra 400
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Ilford HP5+
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        CineStill 800T
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Fomapan 200
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak Portra 400
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak Portra 400
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak Portra 400
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak Portra 400
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak Portra 400
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak Portra 400
+      </div>
+    </a>
+    <a
+      href="/film/undefined"
+    >
+      <div
+        class="card"
+      >
+        Kodak Portra 400
+      </div>
+    </a>
+  </div>
+</div>
+`;
